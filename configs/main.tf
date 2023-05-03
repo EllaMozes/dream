@@ -18,10 +18,10 @@ resource "aws_instance" "dream_instance" {
   key_name                      = "dream-key"
   ami                           = "ami-007855ac798b5175e"           # ubuntu
   user_data                     = <<EOF
-                                  sudo apt-get update
-                                  sudo apt-get install -y docker.io
-                                  sudo docker pull ${var.docker_image}
-                                  sudo docker run -d -p 5000:5000 ${var.docker_image}
+                                  apt-get update
+                                  apt-get install -y docker.io
+                                  docker pull ${var.docker_image}
+                                  docker run -d -p 5000:5000 ${var.docker_image}
                                   EOF
 
   user_data_replace_on_change   = true
