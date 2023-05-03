@@ -1,15 +1,15 @@
 # dream
 
-This project creating a Terraform script that deploys an EC2 instance on AWS.
-The script will be executed for every "merge" request.
+
+This Terraform project is designed to deploy an EC2 instance on AWS. The project is integrated with a GitHub action workflow that automatically triggers the script to execute for every "merge" request. This means that whenever a merge request is made, the Terraform script will be automatically executed to provision an EC2 instance on AWS.
 
 ## Project Goals
 
-Automate the deployment process of a Flask service on an EC2 instance using Terraform and Docker.
+The goal of this project is to automate the deployment of an EC2 instance on AWS using Terraform and GitHub Actions. 
 
-## Getting Started
+## Configure the project in your environment
 
-To get started with the project, follow these steps:
+To use this automation, follow these steps:
 
 1. Edit the Terraform script to include any required changes or customizations, such as adjusting the instance size AWS credentials and other relevant information.
 2. Set up the necessary environment variables and credentials to authenticate with AWS and the DockerHub
@@ -22,9 +22,9 @@ To get started with the project, follow these steps:
 3. Make sure that the AWS user has the right permissions. 
 
 ### Technologies Used
-Terraform
-AWS EC2
-Flask
-Docker
-Docker Hub
+Terraform,
+AWS EC2,
+Flask,
+Docker,
+Docker Hub,
 GitHub Actions
