@@ -24,7 +24,6 @@ jobs:
       with:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
-
     - name: Build Docker image
       uses: docker/build-push-action@v2
       with:
@@ -32,13 +31,12 @@ jobs:
         push: true
         tags: emozes/dream:latest
         file: Dockerfile
-
       - name: Terraform Apply
         uses: hashicorp/setup-terraform@v1
         with:
-          terraform_version: 1.4.6 # Replace with the version of Terraform you want to use
+          terraform_version: 1.4.6 
         env:
-          TF_BACKEND_CONFIG: "configs/main.tf" # Replace with your Terraform backend configuration
+          TF_BACKEND_CONFIG: "configs/main.tf"
         run: |
           terraform init
           terraform plan
