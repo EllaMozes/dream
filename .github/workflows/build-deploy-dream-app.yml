@@ -33,13 +33,11 @@ jobs:
         file: Dockerfile
     - name: Terraform Apply
       uses: hashicorp/setup-terraform@v1
-      
-    - name: Terraform execute
       with:
-          terraform_version: 1.4.6 
-      env:
-        TF_BACKEND_CONFIG: "configs/main.tf"
+        terraform_version: 1.4.6 
+    - name: Terraform Apply
       run: |
+        cd configs
         terraform init
         terraform plan -var "docker_image=emozes/dream:latest"
         # terraform apply -auto-approve -var "docker_image=emozes/dream:latest"
