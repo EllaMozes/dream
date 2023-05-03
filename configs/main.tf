@@ -21,10 +21,6 @@ resource "aws_instance" "dream_instance" {
   user_data_replace_on_change   = true
 }
 
-variable "docker_image" {
-  description = "Docker image name"
-}
-
 variable "aws_access_key" {
   type = string
 }
