@@ -9,7 +9,8 @@ terraform {
 
 provider "aws" {
   region = "us-east-1"
-  profile = "dream"
+  access_key = var.aws_access_key
+  secret_key = var.aws_secret_key
 }
 
 resource "aws_instance" "dream_instance" {
@@ -28,4 +29,12 @@ resource "aws_instance" "dream_instance" {
 
 variable "docker_image" {
   description = "Docker image name"
+}
+
+variable "aws_access_key" {
+  type = string
+}
+
+variable "aws_secret_key" {
+  type = string
 }
