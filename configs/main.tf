@@ -17,7 +17,7 @@ resource "aws_instance" "dream_instance" {
   instance_type                 = "t2.micro"
   key_name                      = "dream-key"
   ami                           = "ami-007855ac798b5175e"           # ubuntu
-  user_data_base64    = <<EOF
+  user_data             = <<EOF
                         #!/bin/bash
                         apt-get update
                         apt-get install -y docker.io
