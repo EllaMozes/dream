@@ -31,12 +31,13 @@ jobs:
         push: true
         tags: emozes/dream:latest
         file: Dockerfile
-    - name: Terraform Apply
+    - name: Terraform env setup
       uses: hashicorp/setup-terraform@v1
       with:
         terraform_version: 1.4.6 
       env:
         TF_BACKEND_CONFIG: "configs/main.tf"
+      - name: Terraform Apply
       run: |
         terraform init
         terraform plan
