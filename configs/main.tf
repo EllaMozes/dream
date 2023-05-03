@@ -17,7 +17,7 @@ resource "aws_instance" "dream_instance" {
   instance_type                 = "t2.micro"
   key_name                      = "dream-key"
   ami                           = "ami-007855ac798b5175e"           # ubuntu
-  user_data_user_data_base64    = "YXB0LWdldCB1cGRhdGUKYXB0LWdldCBpbnN0YWxsIC15IGRvY2tlci5pbwpkb2NrZXIgcHVsbCBlbW96ZXMvZHJlYW06bGF0ZXN0CmRvY2tlciBydW4gLWQgLXAgNTAwMDo1MDAwIGVtb3plcy9kcmVhbTpsYXRlc3Q="
+  user_data_base64    = "YXB0LWdldCB1cGRhdGUKYXB0LWdldCBpbnN0YWxsIC15IGRvY2tlci5pbwpkb2NrZXIgcHVsbCBlbW96ZXMvZHJlYW06bGF0ZXN0CmRvY2tlciBydW4gLWQgLXAgNTAwMDo1MDAwIGVtb3plcy9kcmVhbTpsYXRlc3Q="
 
   user_data_replace_on_change   = true
 }
