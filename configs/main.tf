@@ -15,6 +15,17 @@ provider "aws" {
 resource "aws_instance" "dream_instance" {
   instance_type                 = "t2.micro"
   key_name                      = "dream-key"
-  ami                           = "ami-02561dd2ff15da845"           # "ami-02396cdd13e9a1257"
+  ami                           = "ami-007855ac798b5175e"           # ubuntu
+  user_data_base64              = <<EOF
+                                  sudo apt-get update
+                                  sudo apt-get install -y docker.io
+                                  sudo docker pull ${var.docker_image}
+                                  sudo docker run -d -p 5000:5000 ${var.docker_image}
+                                  EOF
 
+  user_data_replace_on_change   = true
+}
+
+variable "docker_image" {
+  description = "Docker image name"
 }
