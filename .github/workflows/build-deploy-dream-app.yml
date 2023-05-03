@@ -45,6 +45,6 @@ jobs:
       run: |
         cd configs
         terraform init
-        terraform plan --auto-approve -var "aws_access_key=${{ secrets.AWS_ACCESS_KEY_ID }}" -var "aws_secret_key=${{ secrets.AWS_SECRET_ACCESS_KEY }}" -var "docker_image=emozes/dream:latest"
+        terraform plan -var "aws_access_key=${{ secrets.AWS_ACCESS_KEY_ID }}" -var "aws_secret_key=${{ secrets.AWS_SECRET_ACCESS_KEY }}" -var "docker_image=emozes/dream:latest"
         # terraform apply -auto-approve -var "aws_access_key=${{ secrets.AWS_ACCESS_KEY_ID }}" -var "aws_secret_key=${{ secrets.AWS_SECRET_ACCESS_KEY }}" -var "docker_image=emozes/dream:latest"
 
