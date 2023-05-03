@@ -23,9 +23,19 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         context: .
-        push: false
+        push: true
         tags: emozes/dream:latest
         file: Dockerfile
 #     - name: Test with pytest
 #       run: |
 #         docker run your_docker_hub_username/your_docker_image_name:latest pytest
+
+      # - name: Terraform Apply
+      #   uses: hashicorp/setup-terraform@v1
+      #   with:
+      #     terraform_version: 1.0.7 # Replace with the version of Terraform you want to use
+      #   env:
+      #     TF_BACKEND_CONFIG: "configs/main.tf" # Replace with your Terraform backend configuration
+      #   run: |
+      #     terraform init
+      #     terraform plan
