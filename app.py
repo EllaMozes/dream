@@ -7,7 +7,6 @@ app = Flask(__name__)
 def hello():
     return 'Hi there!'
 
-
 @app.route('/json')
 def get_json():
     response = requests.get('https://jsonplaceholder.typicode.com/todos')
@@ -15,7 +14,7 @@ def get_json():
 
 @app.route('/json/user/<user_id>', methods=["GET"])
 def get_user_id(user_id):
-    return f'Hey there, {user_id}'
+    return {user_id}
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
