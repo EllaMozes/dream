@@ -35,7 +35,7 @@ jobs:
         push: true
         tags: emozes/dream:latest
         file: Dockerfile
-    - name: Terraform Apply
+    - name: Terraform set up
       uses: hashicorp/setup-terraform@v1
       with:
         terraform_version: 1.4.6 

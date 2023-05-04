@@ -14,7 +14,7 @@ def get_json():
 
 @app.route('/json/user/<user_id>', methods=["GET"])
 def get_user_id(user_id):
-    return {user_id}
+    return f'Your user id is :{user_id}'
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
