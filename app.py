@@ -13,8 +13,9 @@ def get_json():
     return jsonify(response.json())
 
 @app.route('/json/user/<user_id>', methods=["GET"])
-def get_user_id(user_id):
-    return f'Your user id is :{user_id}'
+def get_user_tasks(user_id):
+    response = requests.get(f'https://jsonplaceholder.typicode.com/users/{user_id}/todos')
+    return jsonify(response.json())
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
